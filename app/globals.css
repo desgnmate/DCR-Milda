@@ -10,7 +10,7 @@
 }
 
 * { box-sizing: border-box; }
-html { background: var(--void); color-scheme: dark; scroll-behavior: smooth; }
+html { max-width: 100%; overflow-x: clip; background: var(--void); color-scheme: dark; scroll-behavior: smooth; }
 body { margin: 0; background: var(--void); color: var(--bone); font-family: var(--font-display), sans-serif; font-weight: 400; overflow-x: clip; }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { color: inherit; font: inherit; }
@@ -392,6 +392,8 @@ body:has(.site-header.menu-open) { overflow: hidden; }
   .section-code-wide span:last-child { display: none; }
   .release-row { grid-template-columns: 1.6rem 1fr auto; }
   .release-arrow { display: none; }
+  .tour-heading, .tour-intro { min-width: 0; }
+  .tour-heading h2 { font-size: clamp(3.5rem, 18vw, 4.4rem); }
   .tour-row { grid-template-columns: 4.5rem 1fr minmax(4.5rem, auto); gap: .6rem; }
   .tour-country { display: none; }
   .story-body { grid-template-columns: 1fr; }
