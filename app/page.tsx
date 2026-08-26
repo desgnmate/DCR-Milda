@@ -152,7 +152,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="site-footer section-pad">
+      <footer id="footer" className="site-footer section-pad">
         <div className="footer-top">
           <Image className="footer-logo" src="/images/dcr-logo.webp" alt="DCR MILDA official logo" width={600} height={600} />
           <div><span className="eyebrow">Booking</span><a href="mailto:dcrmilda@gmail.com">dcrmilda@gmail.com <ArrowUpRight /></a></div>
