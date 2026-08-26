@@ -7,6 +7,8 @@ import { HeroPlayer } from "@/components/hero-player";
 import { ArrowRight, ArrowUpRight } from "@/components/icons";
 
 export default function Home() {
+  const upcomingLocations = tourDates.map((show) => show.city);
+
   return (
     <main id="main">
       <section className="hero" id="top" aria-labelledby="hero-title">
@@ -17,8 +19,20 @@ export default function Home() {
         <div className="hero-shade" aria-hidden="true" />
         <div className="hero-chrome">
           <div className="hero-transmission">
-            <p className="eyebrow">Places</p>
-            <p>Toronto · Prague · Saigon</p>
+            <p className="eyebrow">Upcoming events</p>
+            <div className="hero-tour-marquee" aria-label={`Upcoming tour locations: ${upcomingLocations.join(", ")}`}>
+              <div className="hero-tour-track" aria-hidden="true">
+                {[0, 1].map((loop) => (
+                  <span className="hero-tour-loop" key={loop}>
+                    {upcomingLocations.map((location, index) => (
+                      <span className="hero-tour-location" key={`${loop}-${location}-${index}`}>
+                        {location}<i>·</i>
+                      </span>
+                    ))}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
         <div className="hero-lockup">
